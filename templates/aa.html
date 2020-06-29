@@ -1,0 +1,21 @@
+'''​可以使用 Bootstrap 中预先定义好的表单样式渲染整个 Flask-WTF 表单。导入模板中的bootstrap/wtf.html 元素。
+定义了一个使用 Bootstrap 渲染 Falsk-WTF 表单对象的辅助函数。 wtf.quick_form() 函数的参数为 Flask-WTF 表单对象,
+使用 Bootstrap 的默认样式渲染传入的表单'''
+
+{% import "bootstrap/wtf.html" as wtf %}                        #引入wtf.html中的定义，并起别名wtf（类比python模块）
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Hello, {{ name }}!</h1>
+    </div>
+{#    <style>input{width: 240px;}</style>#}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }}{{ form.name() }}
+        {{ form.submit() }}
+    </form>
+    <p>默认：{{ wtf.quick_form(form) }}</p>
+                                    #wtf.quick_form(form)使用默认的样式渲染form
+</div>
+{% endblock %}

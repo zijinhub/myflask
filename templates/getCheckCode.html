@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}SecretAccess{% endblock %}
+{#<script type = "text/css" src = "{{ url_for('static', filename = 'style.css') }}" ></script>#}
+{% block page_content %}
+    {{ wtf.quick_form(form) }}
+    <div class="page-header">
+        <h1>校验码：{% if check_code %}
+            {{ check_code }}
+            {% else %}
+            根据输入字符串计算返回的校验码在这里显示
+        {% endif %}</h1>
+    </div>
+{% endblock %}

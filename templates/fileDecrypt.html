@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}SecretAccess{% endblock %}
+<script type = "text/css" src = "{{ url_for('static', filename = 'style.css') }}" ></script>
+{% block page_content %}
+    {{ wtf.quick_form(form) }}
+    <div class="page-header">
+        <label>解密文件内容：</label>
+        <textarea name="解密文件内容：" cols="180" rows="15">{% if decrypt_file_content %}{{ decrypt_file_content }} {% endif %}</textarea>
+    </div>
+
+{% endblock %}

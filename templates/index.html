@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}SecretAccess{% endblock %}
+{% block page_content %}
+    <div class="page-header"  >
+        <br>
+        <p><a style="color: blue;font-size: medium" href="{{ url_for('get_agent_secret_key') }}">获取商家私钥</a></p>
+        <p><a style="color: blue;font-size: medium" href="{{ url_for('get_check_code') }}">获取校验码</a></p>
+        <p><a style="color: blue;font-size: medium" href="{{ url_for('file_decrypt') }}">本地文件解密</a></p>
+        <p><a style="color: blue;font-size: medium" href="{{ url_for('login') }}">登录接口</a></p>
+        <p>销售接口</p>
+        <p>兑奖接口</p>
+        <p>自购投注查询</p>
+        <p>查询站点余额</p>
+        <p>时间同步</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} BOOTSTRAP {% endblock %}
+{#<script type = "text/css" src = "{{ url_for('static', filename = 'style.css') }}" ></script>#}
+{#<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">#}
+{% block navbar %}
+    <div class="navbar navbar-inverse " role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+{#            <div class="navbar-collapse collapse">#}
+{#                <ul class="nav navbar-nav">#}
+{#                    <li><a href="/lottBet">lottBet</a></li>#}
+{#                </ul>#}
+{#            </div>#}
+        </div>
+    </div>
+{% endblock %}
+{#{% block scripts %}#}
+{#    {{ super() }}#}
+{#    {{ moment.include_moment() }}#}
+{#{% endblock %}#}
+{% block content %}
+    <div class="container" >
+        <div>
+            <h1>Welcome to sinodata testing platform! </h1>
+            <h1>思乐数据测试平台欢迎您！</h1>
+        </div>
+        {% block page_content %}{% endblock %}
+    </div>
+{% endblock %}
